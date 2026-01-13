@@ -20,7 +20,7 @@
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Poppins',sans-serif;background:#fff;color:#111}
-    header{background:linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.75)),url('https://images.unsplash.com/photo-1505691723518-36a5ac3b2f8c');background-size:cover;background-position:center;color:#fff}
+    header{background:linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.75)),url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg');background-size:cover;background-position:center;color:#fff}
     nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%}
     nav h1{font-size:22px;font-weight:600}
     nav .lang button{background:none;border:1px solid #fff;color:#fff;margin-left:8px;padding:5px 10px;cursor:pointer}
@@ -115,9 +115,10 @@ const content={
  ar:{dir:'rtl',hero_title:'إدارة احترافية لعقارات Airbnb في المغرب',hero_sub:'مستوحاة من أفضل شركات الكونسيرج، نعتني بعقارك ونزيد أرباحك.',hero_cta:'استشارة مجانية',services_title:'خدماتنا',services_sub:'إدارة كاملة للإيجار القصير الأمد',services:['إنشاء وتحسين الإعلانات','التواصل مع الضيوف 24/7','إدارة ذكية للأسعار','تنظيم التنظيف والصيانة','إدارة الدخول والخروج','تقارير شهرية'],why_title:'لماذا أطلس كونسيرج',why_sub:'شريكك المحلي الموثوق',why:['خبرة محلية','تعظيم الأرباح','إدارة شفافة','تجربة ضيوف مميزة'],steps_title:'كيف نعمل',steps:['التواصل','تحليل العقار','تحسين الإعلان','إدارة كاملة'],contact_title:'تواصل معنا',contact_sub:'ابدأ اليوم وحقق أرباحاً أكثر.'}
 };
 
-function setLang(l){const c=content[l];document.documentElement.dir=c.dir;document.body.className=c.dir==='rtl'?'rtl':'';hero_title.innerText=c.hero_title;hero_sub.innerText=c.hero_sub;hero_cta.innerText=c.hero_cta;services_title.innerText=c.services_title;services_sub.innerText=c.services_sub;services.innerHTML=c.services.map(s=>`<div class='card'><h4>${s}</h4><p>Professional execution inspired by leading Moroccan conciergeries.</p></div>`).join('');why_title.innerText=c.why_title;why_sub.innerText=c.why_sub;why.innerHTML=c.why.map(w=>`<div class='card'><h4>${w}</h4><p>Built for property owners seeking reliability.</p></div>`).join('');steps_title.innerText=c.steps_title;steps.innerHTML=c.steps.map(s=>`<div class='card'><h4>${s}</h4><p>Simple & transparent process.</p></div>`).join('');contact_title.innerText=c.contact_title;contact_sub.innerText=c.contact_sub}
+function setLang(l){const c=content[l];document.documentElement.dir=c.dir;document.body.className=c.dir==='rtl'?'rtl':'';hero_title.innerText=c.hero_title;hero_sub.innerText=c.hero_sub;hero_cta.innerText=c.hero_cta;services_title.innerText=c.services_title;services_sub.innerText=c.services_sub;services.innerHTML=c.services.map((s,i)=>`<div class='card'><img src="${['https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg','https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg','https://images.pexels.com/photos/6195126/pexels-photo-6195126.jpeg','https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg','https://images.pexels.com/photos/3771110/pexels-photo-3771110.jpeg','https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg'][i]}" style="width:100%;border-radius:8px;margin-bottom:15px"><h4>${s}</h4><p>Professional execution inspired by leading Moroccan conciergeries.</p></div>`).join('');why_title.innerText=c.why_title;why_sub.innerText=c.why_sub;why.innerHTML=c.why.map(w=>`<div class='card'><h4>${w}</h4><p>Built for property owners seeking reliability.</p></div>`).join('');steps_title.innerText=c.steps_title;steps.innerHTML=c.steps.map(s=>`<div class='card'><h4>${s}</h4><p>Simple & transparent process.</p></div>`).join('');contact_title.innerText=c.contact_title;contact_sub.innerText=c.contact_sub}
 setLang('en');
 </script>
 
 </body>
 </html>
+
