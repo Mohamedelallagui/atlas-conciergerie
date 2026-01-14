@@ -44,7 +44,11 @@
   color: var(--secondary);
 }
     nav .lang button{background:none;border:1px solid #fff;color:#fff;margin-left:8px;padding:5px 10px;cursor:pointer}
-    
+    .lang {
+  display: flex;           /* arrange buttons in a row */
+  gap: 10px;               /* space between buttons */
+  margin-left: 20px;       /* optional: space from last menu item */
+}
     .hero{padding:120px 8%;max-width:1200px}
     .hero h2{font-size:42px;line-height:1.2;margin-bottom:20px}
     .hero p{font-size:18px;max-width:600px;margin-bottom:30px}
@@ -106,7 +110,10 @@
   }
 
   .nav-menu.show{
-    display:flex;
+    display: flex;          /* make menu horizontal */
+  align-items: center;    /* vertically align links and language */
+  justify-content: center;/* center the menu in nav */
+  gap: 40px;              /* space between menu items, adjust as needed */
   }
 }
     @media(max-width:768px){
