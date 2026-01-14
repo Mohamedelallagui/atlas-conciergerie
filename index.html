@@ -19,11 +19,24 @@
       --dark:#020617;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    html {
+    scroll-behavior: smooth;
+    }
     body{font-family:'Poppins',sans-serif;background:#fff;color:#111}
     header{background:linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.45)),url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg');background-size:cover;background-position:center;color:#fff}
     nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%}
     nav h1{font-size:22px;font-weight:600}
+    .nav-link{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.nav-link.active{
+  color: var(--secondary);
+}
     nav .lang button{background:none;border:1px solid #fff;color:#fff;margin-left:8px;padding:5px 10px;cursor:pointer}
+    header{ position: sticky; top: 0; z-index: 1000; }
     .hero{padding:120px 8%;max-width:1200px}
     .hero h2{font-size:42px;line-height:1.2;margin-bottom:20px}
     .hero p{font-size:18px;max-width:600px;margin-bottom:30px}
@@ -53,6 +66,31 @@
 
     .rtl{direction:rtl;text-align:right}
 
+    .menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  color:#fff;
+}
+    @media(max-width:900px){
+  .menu-toggle{display:block}
+
+  .nav-menu{
+    position:absolute;
+    top:70px;
+    right:8%;
+    background:var(--primary);
+    padding:20px;
+    border-radius:10px;
+    display:none;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-menu.show{
+    display:flex;
+  }
+}
     @media(max-width:768px){
       .hero h2{font-size:32px}
     }
@@ -60,10 +98,25 @@
 </head>
 <body>
 
-<header>
+<header id="top">
   <nav>
     <img src="images/logo1.jpg" alt="Atlas Conciergerie logo" style="height:48px;">
-    <div class="lang">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div style="display:flex;align-items:center;gap:25px;">
+  <div class="nav-menu" id="navMenu">
+  <a href="#top" class="nav-link" >Accueil</a>
+  <a href="#services-section"  class="nav-link" >Nos services</a>
+  <a href="#why-section"  class="nav-link" >Pourquoi Atlas</a>
+  <a href="#steps-section"  class="nav-link" >Comment ça marche</a>
+  <a href="#contact"  class="nav-link" >Contact</a>
+
+  <div class="lang">
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+    </div>
+</div>
       <button onclick="setLang('fr')">FR</button>
       <button onclick="setLang('ar')">AR</button>
       <button onclick="setLang('en')">EN</button>
@@ -76,7 +129,7 @@
   </div>
 </header>
 
-<section>
+<section id="services-section">
   <div class="section-title">
     <h3 id="services_title"></h3>
     <p id="services_sub"></p>
@@ -84,7 +137,7 @@
   <div class="grid" id="services"></div>
 </section>
 
-<section class="dark">
+<section id="why-section" class="dark">
   <div class="section-title">
     <h3 id="why_title"></h3>
     <p id="why_sub"></p>
@@ -92,7 +145,7 @@
   <div class="grid" id="why"></div>
 </section>
 
-<section class="steps">
+<section id="steps-section" class="steps">
   <div class="section-title">
     <h3 id="steps_title"></h3>
   </div>
@@ -122,7 +175,30 @@ const content={
 };
 
 function setLang(l){const c=content[l];document.documentElement.dir=c.dir;document.body.className=c.dir==='rtl'?'rtl':'';hero_title.innerText=c.hero_title;hero_sub.innerText=c.hero_sub;hero_cta.innerText=c.hero_cta;services_title.innerText=c.services_title;services_sub.innerText=c.services_sub;services.innerHTML=c.services.map((s,i)=>`<div class='card'><img src="${['https://images.pexels.com/photos/5077049/pexels-photo-5077049.jpeg','https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg','https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg','https://images.pexels.com/photos/9462341/pexels-photo-9462341.jpeg','https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg','https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'][i]}" style="width:100%;border-radius:8px;margin-bottom:15px"><h4>${s}</h4><p>Professional execution inspired by leading Moroccan conciergeries.</p></div>`).join('');why_title.innerText=c.why_title;why_sub.innerText=c.why_sub;why.innerHTML=c.why.map(w=>`<div class='card'><h4>${w}</h4><p>Built for property owners seeking reliability.</p></div>`).join('');steps_title.innerText=c.steps_title;steps.innerHTML=c.steps.map(s=>`<div class='card'><h4>${s}</h4><p>Simple & transparent process.</p></div>`).join('');contact_title.innerText=c.contact_title;contact_sub.innerText=c.contact_sub}
-setLang('en');
+const sections = document.querySelectorAll("header, section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 140;
+    if (window.pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+  setLang('fr');
 </script>
 
 </body>
