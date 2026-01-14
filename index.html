@@ -168,23 +168,47 @@
 
 <script>
 const content={
- en:{dir:'ltr',hero_title:'Premium Airbnb Co‑Hosting Across Morocco',hero_sub:'Inspired by leading conciergerie brands, Atlas Conciergerie manages your property professionally to maximize revenue and guest satisfaction.',hero_cta:'Get a Free Consultation',services_title:'Our Services',services_sub:'Complete short‑term rental management',services:['Listing Creation & Optimization',
+ en:{dir:'ltr',hero_title:'Premium Airbnb/Booking Co‑Hosting Across Morocco',hero_sub:'Inspired by leading conciergerie brands, Atlas Conciergerie manages your property professionally to maximize revenue and guest satisfaction.',hero_cta:'Get a Free Consultation',services_title:'Our Services',services_sub:'Complete short‑term rental management',services:['Listing Creation & Optimization',
  'Dynamic Pricing Strategy',
  '24/7 Guest Communication',
  'Check-in / Check-out Management',
  'Cleaning, Linen & Laundry Coordination',
  'Property Maintenance Coordination',
  'Professional Photography',
- 'Monthly Performance Reports'],why_title:'Why Atlas Conciergerie',why_sub:'A trusted local partner for property owners',why:['Local Moroccan expertise','Revenue‑focused strategy','Transparent management','Hotel‑level guest experience'],steps_title:'How It Works',steps:['Contact us','Property analysis','Listing optimization','Full management'],contact_title:'Contact Us',contact_sub:'Start earning more with zero stress.'},
- fr:{dir:'ltr',hero_title:'Co‑Hosting Airbnb Premium au Maroc',hero_sub:'Inspiré des meilleures conciergeries, Atlas Conciergerie gère votre bien pour maximiser vos revenus.',hero_cta:'Consultation gratuite',services_title:'Nos Services',services_sub:'Gestion complète de location courte durée',services:[ 'Création & optimisation des annonces',
+ 'Monthly Performance Reports'],
+  serviceDescriptions:[
+    'Create and optimize listings to attract more bookings.',
+    'Automatically adjust pricing to maximize your revenue.',
+    'Respond to guests professionally around the clock.',
+    'Fully organize check-ins and check-outs.',
+    'Manage cleaning, linen, and changeover services.',
+    'Supervise maintenance and repairs of your property.',
+    'Professional photos to showcase your property.',
+    'Receive detailed monthly performance reports.'
+  ],
+     why_title:'Why Atlas Conciergerie',why_sub:'A trusted local partner for property owners',why:['Local Moroccan expertise','Revenue‑focused strategy','Transparent management','Hotel‑level guest experience'],steps_title:'How It Works',steps:['Contact us','Property analysis','Listing optimization','Full management'],contact_title:'Contact Us',contact_sub:'Start earning more with zero stress.'},
+ 
+  fr:{dir:'ltr',hero_title:'Co‑Hosting Airbnb/Booking Premium au Maroc',hero_sub:'Inspiré des meilleures conciergeries, Atlas Conciergerie gère votre bien pour maximiser vos revenus.',hero_cta:'Consultation gratuite',services_title:'Nos Services',services_sub:'Gestion complète de location courte durée',services:[ 'Création & optimisation des annonces',
  'Stratégie de tarification dynamique',
  'Communication avec les clients 24/7',
  'Gestion des check-in / check-out',
  'Coordination ménage, linge & blanchisserie',
  'Coordination maintenance du bien',
  'Photographie professionnelle',
- 'Rapports de performance mensuels'],why_title:'Pourquoi Atlas Conciergerie',why_sub:'Votre partenaire local de confiance',why:['Expertise locale','Optimisation des revenus','Gestion transparente','Expérience client premium'],steps_title:'Comment ça marche',steps:['Contact','Analyse du bien','Optimisation','Gestion complète'],contact_title:'Contact',contact_sub:'Augmentez vos revenus sans stress.'},
- ar:{dir:'rtl',hero_title:'إدارة احترافية لعقارات Airbnb في المغرب',hero_sub:'مستوحاة من أفضل شركات الكونسيرج، نعتني بعقارك ونزيد أرباحك.',hero_cta:'استشارة مجانية',services_title:'خدماتنا',services_sub:'إدارة كاملة للإيجار القصير الأمد',services:[
+ 'Rapports de performance mensuels'],
+  serviceDescriptions:[
+    'Rédaction et optimisation pour attirer plus de réservations.',
+    'Ajustement automatique des prix pour maximiser vos revenus.',
+    'Réponses rapides et professionnelles à vos clients 24/7.',
+    'Organisation complète des arrivées et départs.',
+    'Gestion du ménage, du linge et du changement de locataires.',
+    'Supervision des réparations et entretien du bien.',
+    'Photos professionnelles pour mettre en valeur votre propriété.',
+    'Rapports détaillés chaque mois pour suivre les performances.'
+  ],
+      why_title:'Pourquoi Atlas Conciergerie',why_sub:'Votre partenaire local de confiance',why:['Expertise locale','Optimisation des revenus','Gestion transparente','Expérience client premium'],steps_title:'Comment ça marche',steps:['Contact','Analyse du bien','Optimisation','Gestion complète'],contact_title:'Contact',contact_sub:'Augmentez vos revenus sans stress.'},
+ 
+  ar:{dir:'rtl',hero_title:'إدارة احترافية لعقارات Airbnb/Booking في المغرب',hero_sub:'مستوحاة من أفضل شركات الكونسيرج، نعتني بعقارك ونزيد أرباحك.',hero_cta:'استشارة مجانية',services_title:'خدماتنا',services_sub:'إدارة كاملة للإيجار القصير الأمد',services:[
  'إنشاء وتحسين الإعلانات',
  'إدارة ذكية للأسعار',
  'التواصل مع الضيوف 24/7',
@@ -192,10 +216,22 @@ const content={
  'تنظيم التنظيف والبياضات والغسيل',
  'تنظيم صيانة العقار',
  'تصوير احترافي',
- 'تقارير أداء شهرية'],steps_title:'كيف نعمل',steps:['التواصل','تحليل العقار','تحسين الإعلان','إدارة كاملة'],contact_title:'تواصل معنا',contact_sub:'ابدأ اليوم وحقق أرباحاً أكثر.'}
+ 'تقارير أداء شهرية'],
+   serviceDescriptions:[
+    'إنشاء وتحسين الإعلانات لجذب المزيد من الحجوزات.',
+    'تعديل الأسعار تلقائياً لزيادة أرباحك.',
+    'الرد على الضيوف باحتراف على مدار الساعة.',
+    'تنظيم كامل لعمليات الوصول والمغادرة.',
+    'إدارة التنظيف والبياضات وخدمات التغيير.',
+    'الإشراف على صيانة العقار وإصلاحاته.',
+    'صور احترافية لإبراز العقار بأفضل شكل.',
+    'تقديم تقارير أداء شهرية مفصلة.'
+  ],
+      steps_title:'كيف نعمل',steps:['التواصل','تحليل العقار','تحسين الإعلان','إدارة كاملة'],contact_title:'تواصل معنا',contact_sub:'ابدأ اليوم وحقق أرباحاً أكثر.'}
 };
 
-function setLang(l){const c=content[l];document.documentElement.dir=c.dir;document.body.className=c.dir==='rtl'?'rtl':'';hero_title.innerText=c.hero_title;hero_sub.innerText=c.hero_sub;hero_cta.innerText=c.hero_cta;services_title.innerText=c.services_title;services_sub.innerText=c.services_sub;services.innerHTML=c.services.map((s,i)=>`<div class='card'>
+function setLang(l){const c=content[l];document.documentElement.dir=c.dir;document.body.className=c.dir==='rtl'?'rtl':'';hero_title.innerText=c.hero_title;hero_sub.innerText=c.hero_sub;hero_cta.innerText=c.hero_cta;services_title.innerText=c.services_title;services_sub.innerText=c.services_sub;
+                    services.innerHTML=c.services.map((s,i)=>`<div class='card'>
 <img src="${[
   'https://images.pexels.com/photos/5077049/pexels-photo-5077049.jpeg',
   'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg',
@@ -204,7 +240,7 @@ function setLang(l){const c=content[l];document.documentElement.dir=c.dir;docume
   'https://images.pexels.com/photos/9462341/pexels-photo-9462341.jpeg',
   'https://images.pexels.com/photos/16509869/pexels-photo-16509869.jpeg',
   'https://images.pexels.com/photos/7014668/pexels-photo-7014668.jpeg',
-  'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'][i]}" style="width:100%;border-radius:8px;margin-bottom:15px"><h4>${s}</h4><p>Professional execution inspired by leading Moroccan conciergeries.</p></div>`).join('');why_title.innerText=c.why_title;why_sub.innerText=c.why_sub;why.innerHTML=c.why.map(w=>`<div class='card'><h4>${w}</h4><p>Built for property owners seeking reliability.</p></div>`).join('');steps_title.innerText=c.steps_title;steps.innerHTML=c.steps.map(s=>`<div class='card'><h4>${s}</h4><p>Simple & transparent process.</p></div>`).join('');contact_title.innerText=c.contact_title;contact_sub.innerText=c.contact_sub}
+  'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'][i]}" style="width:100%;border-radius:8px;margin-bottom:15px"><h4>${s}</h4><p>${c.serviceDescriptions[i]}</p></div>`).join('');why_title.innerText=c.why_title;why_sub.innerText=c.why_sub;why.innerHTML=c.why.map(w=>`<div class='card'><h4>${w}</h4><p>Built for property owners seeking reliability.</p></div>`).join('');steps_title.innerText=c.steps_title;steps.innerHTML=c.steps.map(s=>`<div class='card'><h4>${s}</h4><p>Simple & transparent process.</p></div>`).join('');contact_title.innerText=c.contact_title;contact_sub.innerText=c.contact_sub}
 const sections = document.querySelectorAll("header, section");
 const navLinks = document.querySelectorAll(".nav-link");
 
