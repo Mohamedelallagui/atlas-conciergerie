@@ -107,7 +107,6 @@
   <nav>
     <img src="images/logo1.jpg" alt="Atlas Conciergerie logo" style="height:48px;">
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div style="display:flex;align-items:center;gap:25px;">
   <div class="nav-menu" id="navMenu">
   <a href="#top" class="nav-link" >Accueil</a>
   <a href="#services-section"  class="nav-link" >Nos services</a>
@@ -120,11 +119,6 @@
     <button onclick="setLang('ar')">AR</button>
     <button onclick="setLang('en')">EN</button>
   </div>
-    </div>
-</div>
-      <button onclick="setLang('fr')">FR</button>
-      <button onclick="setLang('ar')">AR</button>
-      <button onclick="setLang('en')">EN</button>
     </div>
   </nav>
   <div class="hero">
@@ -174,7 +168,7 @@
 
 <script>
 const content={
- en:{dir:'ltr',hero_title:'Premium Airbnb Co‑Hosting Across Morocco',hero_sub:'Inspired by leading conciergerie brands, Atlas Conciergerie manages your property professionally to maximize revenue and guest satisfaction.',hero_cta:'Get a Free Consultation',services_title:'Our Services',services_sub:'Complete short‑term rental management',services:[Listing Creation & Optimization',
+ en:{dir:'ltr',hero_title:'Premium Airbnb Co‑Hosting Across Morocco',hero_sub:'Inspired by leading conciergerie brands, Atlas Conciergerie manages your property professionally to maximize revenue and guest satisfaction.',hero_cta:'Get a Free Consultation',services_title:'Our Services',services_sub:'Complete short‑term rental management',services:['Listing Creation & Optimization',
  'Dynamic Pricing Strategy',
  '24/7 Guest Communication',
  'Check-in / Check-out Management',
@@ -184,7 +178,7 @@ const content={
  'Monthly Performance Reports'],why_title:'Why Atlas Conciergerie',why_sub:'A trusted local partner for property owners',why:['Local Moroccan expertise','Revenue‑focused strategy','Transparent management','Hotel‑level guest experience'],steps_title:'How It Works',steps:['Contact us','Property analysis','Listing optimization','Full management'],contact_title:'Contact Us',contact_sub:'Start earning more with zero stress.'},
  fr:{dir:'ltr',hero_title:'Co‑Hosting Airbnb Premium au Maroc',hero_sub:'Inspiré des meilleures conciergeries, Atlas Conciergerie gère votre bien pour maximiser vos revenus.',hero_cta:'Consultation gratuite',services_title:'Nos Services',services_sub:'Gestion complète de location courte durée',services:[ 'Création & optimisation des annonces',
  'Stratégie de tarification dynamique',
- 'Communication voyageurs 24/7',
+ 'Communication avec les clients 24/7',
  'Gestion des check-in / check-out',
  'Coordination ménage, linge & blanchisserie',
  'Coordination maintenance du bien',
@@ -214,6 +208,13 @@ function setLang(l){const c=content[l];document.documentElement.dir=c.dir;docume
 const sections = document.querySelectorAll("header, section");
 const navLinks = document.querySelectorAll(".nav-link");
 
+  // Collapse mobile menu when a nav link is clicked
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navMenu").classList.remove("show");
+  });
+});
+  
 window.addEventListener("scroll", () => {
   let current = "";
 
