@@ -33,6 +33,25 @@
   padding:20px 8%;
   background: rgba(2,6,23,0.85); /* optional semi-transparent */
   backdrop-filter: blur(6px);     /* optional blur */}
+    .nav-menu{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* CENTER the menu */
+.nav-links{
+  display: flex;
+  gap: 40px;              /* adjust spacing here */
+  justify-content: center;
+  flex: 1;
+}
+
+/* Language buttons on the right */
+.lang{
+  display: flex;
+  gap: 10px;
+}
     nav h1{font-size:22px;font-weight:600}
     .nav-link{
   color:#fff;
@@ -94,27 +113,40 @@
   cursor:pointer;
   color:#fff;
 }
-    @media(max-width:900px){
-  .menu-toggle{display:block}
+ @media(max-width:900px){
+
+  .menu-toggle{
+    display:block;
+  }
 
   .nav-menu{
     position:absolute;
-    top:70px;
+    top:80px;
     right:8%;
     background:var(--primary);
     padding:20px;
     border-radius:10px;
     display:none;
     flex-direction:column;
-    gap:15px;
+    gap:20px;
   }
 
   .nav-menu.show{
-    display: flex;          /* make menu horizontal */
-  align-items: center;    /* vertically align links and language */
-  justify-content: center;/* center the menu in nav */
-  gap: 60px;              /* space between menu items, adjust as needed */
+    display:flex;
   }
+
+  .nav-links{
+    flex-direction:column;
+    gap:18px;
+    align-items:center;
+  }
+
+  .lang{
+    justify-content:center;
+  }
+}
+
+
 }
     @media(max-width:768px){
       .hero h2{font-size:32px}
@@ -132,20 +164,26 @@
   <nav>
     <img src="images/atlaslogo1.svg" alt="Atlas Conciergerie logo" style="height:90px;width:auto;">
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <div class="nav-menu" id="navMenu">
-  <a href="#top" class="nav-link" >Accueil</a>
-  <a href="#services-section"  class="nav-link" >Nos services</a>
-  <a href="#why-section"  class="nav-link" >Pourquoi Atlas</a>
-  <a href="#steps-section"  class="nav-link" >Comment ça marche</a>
-  <a href="#contact"  class="nav-link" >Contact</a>
+ <div class="nav-menu" id="navMenu">
 
-  <div class="lang lang-right">
+  <div class="nav-links">
+    <a href="#top" class="nav-link">Accueil</a>
+    <a href="#services-section" class="nav-link">Nos services</a>
+    <a href="#why-section" class="nav-link">Pourquoi Atlas</a>
+    <a href="#steps-section" class="nav-link">Comment ça marche</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+
+  <div class="lang">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('ar')">AR</button>
     <button onclick="setLang('en')">EN</button>
   </div>
-    </div>
+
+</div>
+
   </nav>
+  
   <div class="hero">
     <h2 id="hero_title"></h2>
     <p id="hero_sub"></p>
